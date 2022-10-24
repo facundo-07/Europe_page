@@ -1,0 +1,14 @@
+@mixin respond($breakpoint){
+    @if ($breakpoint == small){
+        @media screen and (min-width: 576px) {@content}
+    };
+    @if ($breakpoint == medium){
+        @media screen and (min-width: 720px) {@content}
+    };
+    @if ($breakpoint == large){
+        @media screen and (min-width: 1024px) {@content}
+    };
+    @if ($breakpoint == xl){
+        @media screen and (min-width: 1200px) {@content}
+    };
+}
