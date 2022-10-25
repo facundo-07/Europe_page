@@ -2,7 +2,7 @@
 
 *{
     box-sizing: border-box;
-    background-color: rgb(227, 225, 189);
+     ;
 }
 
 html{
@@ -21,7 +21,6 @@ body{
     position: relative;
     overflow: hidden;
     justify-content: center;
-    text-align: left;
     img{
         width: 100%;
         transition: .4s;
@@ -32,8 +31,9 @@ body{
             cursor: pointer;
         };
         @include respond(large){
-            height: 200px;
-            object-fit:cover;
+            height: 500px;
+            object-fit: cover;
+            object-position: 70% 50%
         };
     };
     h2{
@@ -43,7 +43,7 @@ body{
         right: 10px;
         background-color: rgba(0,0,0,0);
         color: white;
-    }
+    };
 }
 
 .discover{
@@ -62,10 +62,54 @@ body{
 .navbar{
     .nav-item{
         font-size: 1.2em;
-    }
+    };
 }
 
 .dropdown-menu{
-    background-color: rgb(227, 225, 189);
     border: 0px;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    background-color: whitesmoke !important;
+}
+
+.home{
+    @include respond(large){
+        display: flex;
+    }
+}
+ 
+ul{
+    list-style-type: none!important;
+    padding: 15px !important;
+}
+
+.container{
+    width: 600px;
+    .row{
+        width: fit-content;
+        margin-top: 15px;
+    };
+    hr{
+        color: black !important;
+    };
+    h4{
+        width: 120px;
+    }
+}
+
+.recommendations{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
+    gap: 15px;
+    justify-content: center;
+    overflow: hidden;
+    img{
+        max-width: 100%;
+        height: auto;
+        transition: .3s;
+        
+        &:hover{
+            transform: scale(1.03)
+        }
+    }
 }
