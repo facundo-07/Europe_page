@@ -1,8 +1,9 @@
+@import 'variables';
 @import 'breakpoints';
 
 *{
     box-sizing: border-box;
-     ;
+    background: whitesmoke ;
 }
 
 html{
@@ -13,8 +14,21 @@ html{
 body{
     padding: 0px;
     margin: 0px;
+    overflow-x: hidden;
 }
 
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: whitesmoke;
+    opacity: .9;
+    color: black !important;
+    @include respond(medium){
+        font-size: 1.4em;
+    }
+}
 
 
 .country{
@@ -59,32 +73,47 @@ body{
     }
 }
 
-.navbar{
-    .nav-item{
-        font-size: 1.2em;
-    };
-}
+
 
 .dropdown-menu{
     border: 0px;
     padding-bottom: 0px !important;
     padding-top: 0px !important;
     background-color: whitesmoke !important;
+    overflow-y: scroll;
+    max-height: 400px;
+    .dropdown-item{
+        transition: $transition;
+        &:hover{
+            transform: scale(1.05);
+        }
+    };
+}
+
+.dropdown-menu-center{
+    @include respond(small){
+        right: auto;
+        left: 50%;
+        -webkit-transform: translate(-27%, 0);
+        -o-transform: translate(-27%, 0);
+        transform: translate(-27%, 0);
+    }
 }
 
 .home{
+    padding-top: 60px;
+    @include respond(small){
+        padding-top: 70px
+    };
     @include respond(large){
         display: flex;
-    }
+    };
 }
  
-ul{
-    list-style-type: none!important;
-    padding: 15px !important;
-}
+
 
 .container{
-    width: 600px;
+    
     .row{
         width: fit-content;
         margin-top: 15px;
@@ -94,22 +123,35 @@ ul{
     };
     h4{
         width: 120px;
+    };
+    ul{
+        list-style-type: none!important;
+        padding: 15px !important;
+    };
+    @include respond(small){
+        overflow: hidden;
+        min-width: 600px;
     }
 }
 
-.recommendations{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
-    gap: 15px;
-    justify-content: center;
+
+h2{
+    margin: 15px;
+}
+
+
+.container.recomendations{
     overflow: hidden;
     img{
-        max-width: 100%;
-        height: auto;
-        transition: .3s;
-        
-        &:hover{
-            transform: scale(1.03)
-        }
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+    };
+    .row{
+        overflow: hidden;
+        justify-content: center;
+        img{
+            width: 100%;
     }
+    };
 }
