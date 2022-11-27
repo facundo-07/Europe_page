@@ -3,7 +3,7 @@
 
 *{
     box-sizing: border-box;
-    background: whitesmoke ;
+    background: whitesmoke;
 }
 
 html{
@@ -74,46 +74,14 @@ body{
 }
 
 
-
-.dropdown-menu{
+.dropdown-menu.region{
+    overflow-x: hidden;
     border: 0px;
     padding-bottom: 0px !important;
     padding-top: 0px !important;
     background-color: whitesmoke !important;
     overflow-y: scroll;
     max-height: 400px;
-    .dropdown-item{
-        transition: $transition;
-        &:hover{
-            transform: scale(1.05);
-        }
-    };
-}
-
-.dropdown-menu-center{
-    @include respond(small){
-        right: auto;
-        left: 50%;
-        -webkit-transform: translate(-27%, 0);
-        -o-transform: translate(-27%, 0);
-        transform: translate(-27%, 0);
-    }
-}
-
-.home{
-    padding-top: 60px;
-    @include respond(small){
-        padding-top: 70px
-    };
-    @include respond(large){
-        display: flex;
-    };
-}
- 
-
-
-.container{
-    
     .row{
         width: fit-content;
         margin-top: 15px;
@@ -129,18 +97,39 @@ body{
         padding: 15px !important;
     };
     @include respond(small){
+        right: auto;
+        left: 50%;
+        -webkit-transform: translate(-27%, 0);
+        -o-transform: translate(-27%, 0);
+        transform: translate(-27%, 0);
         overflow: hidden;
         min-width: 600px;
-    }
+    };
+    .dropdown-item{
+        transition: $transition;
+        &:hover{
+            transform: scale(1.05);
+        }
+    };
 }
 
+.home{
+    padding-top: 60px;
+    @include respond(small){
+        padding-top: 70px
+    };
+    @include respond(large){
+        display: flex;
+    };
+}
+ 
 
 h2{
     margin: 15px;
 }
 
 
-.container.recomendations{
+.container.recommendations{
     overflow: hidden;
     img{
         height: 300px;
@@ -154,4 +143,55 @@ h2{
             width: 100%;
     }
     };
+}
+
+
+.dropdown-menu.travel,
+.dropdown-menu.interest{
+    
+    padding: 10px;
+    background-color: whitesmoke !important;
+    border: 0px;
+    transform: translateZ(0);
+    ul{
+        list-style-type: none!important;
+        padding: 15px !important;
+    };
+    @include respond(small){
+        overflow: hidden;
+        min-width: 200px;
+    };
+    .dropdown-item{
+        transition: $transition;
+        &:hover{
+            transform: scale(1.05)
+        }
+    }
+    
+}
+
+.nav-item{
+    padding-inline: 10px;
+}
+
+
+.java {
+    text-align: center;
+    p{
+    font-size: 1.5em;
+    padding: 15px;
+    background-color: rgb(13, 13, 31);
+    color: beige;
+    font-weight: bold;
+    width:fit-content;
+    text-align: center;
+    margin: auto;
+    }
+}
+
+#save{
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
 }
