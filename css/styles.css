@@ -23,11 +23,7 @@ body {
     color: black !important
 }
 
-@media screen and (min-width: 720px) {
-    .navbar {
-        font-size: 1.4em
-    }
-}
+
 
 .country {
     position: relative;
@@ -45,14 +41,6 @@ body {
     transform: scale(1.05);
     filter: initial;
     cursor: pointer
-}
-
-@media screen and (min-width: 1024px) {
-    .country img {
-        height: 500px;
-        object-fit: cover;
-        object-position: 70% 50%
-    }
 }
 
 .country h2 {
@@ -106,17 +94,7 @@ body {
     padding: 15px !important
 }
 
-@media screen and (min-width: 576px) {
-    .dropdown-menu.region {
-        right: auto;
-        left: 50%;
-        -webkit-transform: translate(-27%, 0);
-        -o-transform: translate(-27%, 0);
-        transform: translate(-27%, 0);
-        overflow: hidden;
-        min-width: 600px
-    }
-}
+
 
 .dropdown-menu.region .dropdown-item {
     transition: .2s
@@ -130,20 +108,70 @@ body {
     padding-top: 60px
 }
 
-@media screen and (min-width: 576px) {
-    .home {
-        padding-top: 70px
-    }
+.dropdown-menu.travel .dropdown-item,
+.dropdown-menu.interest .dropdown-item {
+    transition: .2s
 }
 
-@media screen and (min-width: 1024px) {
-    .home {
-        display: flex
-    }
+.dropdown-menu.travel .dropdown-item:hover,
+.dropdown-menu.interest .dropdown-item:hover {
+    transform: scale(1.05)
 }
 
-h2 {
-    margin: 15px
+.nav-item {
+    padding-inline: 10px
+}
+
+.java {
+    text-align: center
+}
+
+.java p {
+    font-size: 1.5em;
+    padding: 15px;
+    background-color: #0d0d1f;
+    color: beige;
+    font-weight: bold;
+    width: fit-content;
+    text-align: center;
+    margin: auto
+}
+
+#save {
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px
+}
+
+
+
+.header-image-container {
+    background-image: url('../media/header.png');
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+
+.h2-header {
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    background-color: transparent;
+    color: rgb(23, 24, 24);
+    font-family: "Sofia", sans-serif;
+    font-size: 25px
+}
+
+.h3-header {
+    position: absolute;
+    top: 26%;
+    left: 2%;
+    background-color: transparent;
+    color: rgb(23, 24, 24);
+    font-family: "Sofia", sans-serif;
+    font-size: 30px
 }
 
 .container.recommendations {
@@ -188,38 +216,60 @@ h2 {
     }
 }
 
-.dropdown-menu.travel .dropdown-item,
-.dropdown-menu.interest .dropdown-item {
-    transition: .2s
+@media screen and (min-width: 720px) {
+    .navbar {
+        font-size: 1.4em
+    }
 }
 
-.dropdown-menu.travel .dropdown-item:hover,
-.dropdown-menu.interest .dropdown-item:hover {
-    transform: scale(1.05)
+@media screen and (min-width: 576px) {
+    .home {
+        padding-top: 70px
+    }
+
+    .h2-header {
+        position: absolute;
+        top: 20%;
+        left: 2%;
+        background-color: transparent;
+        color: rgb(23, 24, 24);
+        font-family: "Sofia", sans-serif;
+        font-size: 30px
+    }
+    
+    .h3-header {
+        position: absolute;
+        top: 26%;
+        left: 2%;
+        background-color: transparent;
+        color: rgb(23, 24, 24);
+        font-family: "Sofia", sans-serif;
+        font-size: 25px
+    }
 }
 
-.nav-item {
-    padding-inline: 10px
+@media screen and (min-width: 1024px) {
+    .home {
+        display: flex
+    }
 }
 
-.java {
-    text-align: center
+@media screen and (min-width: 576px) {
+    .dropdown-menu.region {
+        right: auto;
+        left: 50%;
+        -webkit-transform: translate(-27%, 0);
+        -o-transform: translate(-27%, 0);
+        transform: translate(-27%, 0);
+        overflow: hidden;
+        min-width: 600px
+    }
 }
 
-.java p {
-    font-size: 1.5em;
-    padding: 15px;
-    background-color: #0d0d1f;
-    color: beige;
-    font-weight: bold;
-    width: fit-content;
-    text-align: center;
-    margin: auto
-}
-
-#save {
-    width: 100px;
-    margin: auto;
-    text-align: center;
-    margin-bottom: 20px
+@media screen and (min-width: 1024px) {
+    .country img {
+        height: 500px;
+        object-fit: cover;
+        object-position: 70% 50%
+    }
 }
